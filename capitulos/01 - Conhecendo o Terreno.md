@@ -11,6 +11,10 @@ Neste breve capítulo, iremos abordar:
 
 C é a linguagem sucessora do B (não é meme), tendo sido criada pelos mesmos pesquisadores: [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson) e [Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie). Feita no lendário Bell Labs, sua origem está inextricavelmente ligada ao [UNIX](https://pt.wikipedia.org/wiki/Unix). Tão simples que cabe em um livro (relativamente) curto: [The C programming language](https://www.cimat.mx/ciencia_para_jovenes/bachillerato/libros/%5BKernighan-Ritchie%5DThe_C_Programming_Language.pdf). Tão poderosa que escreveu os sistemas operacionais mais importantes que já existiram.
 
+![Ken Thompson e Dennis Ritchie](../imagens/00_Dennis_e_Ken.jpg)
+
+> Os criadores do C, Ken Thompson (esquerda) e Dennis Ritchie (direita)
+
 Ela surgiu no início dos anos 70, a partir da tentativa de Ritchie de melhorar a linguagem B, que havia sido inventada para a escrita do sistema operacional Unix. Após poucos anos de desenvolvimento, em 1973, C já tinha um pré-processador e estava relativamente madura, tanto que foi utilizada para reimplementar o kernel do Unix.
 
 Uma década depois, C havia se tornado bastante popular, o que levou a ANSI a produzir documentos padronizando a especificação da linguagem. Em 1989 este padrão foi ratificado pela ANSI, recebendo o nome de C89. No ano seguinte, ele foi adotado pela ISO, recebendo o novo nome de C90 (mas que se refere à mesma especificação que o C89). Desde então, muitas outras adições foram feitas à linguagem C, sendo a versão mais recente o C23. Contudo, hoje em dia a maioria das aplicações são escritas ou com C99 ou com C17.
@@ -31,6 +35,8 @@ No contexto das linguagens de programação, no entanto, "baixo nível" e "alto 
 Essas duas categorias não representam uma realidade dual e absoluta. As linguagens não pertencem a _uma_ das duas categorias e acabou, na verdade estes termos representam os extremos de um **espectro**. Por isso no título desta subseção a palavra "baixo", em "baixo nível", está entre aspas - pois C não é totalmente baixo nível, mas também não chega a ser abstraída o suficiente para a maioria das pessoas considerá-la alto nível.
 
 Tentando fazer uma analogia aqui, programar em uma linguagem de baixo nível é como costurar com uma agulha, enquanto programar em alto nível é como usar uma máquina de costura. Usando uma agulha, você possui grande controle sobre todos os detalhes do fiar de um suéter, mas o processo será demorado e você precisará ser brabo na costura, ou o resultado ficará uma aberração. Usando uma máquina de costura, seu controle será menor, mas o processo será rápido e sua habilidade com uma agulha não será tão relevante. Note que nesta analogia, o tempo de costurar o suéter não é o tempo de execução de um programa, e sim o tempo de escrever o código em si. Na verdade, o tempo de execução de programas escritos em linguagens de baixo nível (agulhas) é via de regra bem menor do que o tempo de execução de programas escritos em linguagens de alto nível. Ou seja, por estarem mais próximas do hardware e da linguagem de máquina, códigos de baixo nível costumam ser mais eficientes do que sua contra-parte.
+
+![Analogia da agulha](../imagens/00_analogia_agulha.png)
 
 ### Característica 2 - Sintaxe simples
 
@@ -65,6 +71,8 @@ O sistema de tipos de uma linguagem de programação pode variar em dois eixos: 
 - **Tipagem fraca**: os valores podem ser convertidos implicitamente, não é necessário falar com seu monitor e nem fazer específico. Contudo, isto pode acabar permitindo que você converta sem querer tipos que não são muito compatíveis, causando comportamentos indesejados (insetos!! quero dizer... bugs!!!!).
 
 No C, o compilador confere a tipagem das variáveis para ter certeza de que você não está colocando um texto em uma caixa marcada com um adesivo escrito "caixa exclusiva para números inteiros". Contudo, ele deixa que você, sem dizer nada, troque o adesivo (temporariamente) para um que diz "caixa exclusiva para números reais", o que configura uma conversão de tipos implícita.
+
+![Tipagem fraca ilustração](../imagens/00_tipagem_fraca.png)
 
 ### Característica 5 - Procedural
 
