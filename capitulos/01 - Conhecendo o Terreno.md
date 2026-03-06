@@ -2,13 +2,20 @@
 
 Agora que sua mochila já está pronta e o mar está a sua frente, **chegou a hora de navegar!!!** _Só que não..._, antes de colocarmos a mão na massa com o C, vamos antes sentar na sala do capitão e dar uma olhada no mapa irado e estranhamente velho do terreno e das correntes marítimas adiante. O que estou querendo dizer é: vamos entender um pouco do que É a linguagem C, e porque ela é importante.
 
-Neste breve capítulo, iremos falar sobre:
+Neste breve capítulo, iremos abordar:
 
-- Uma breve história da linguagem C
+- Uma breve história da linguagem
 - Características importantes do C
-- Que raios é compilação?
 
-## Uma breve história da linguagem C
+## Uma breve história da linguagem
+
+C é a linguagem sucessora do B (não é meme), tendo sido criada pelos mesmos pesquisadores: [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson) e [Dennis Ritchie](https://en.wikipedia.org/wiki/Dennis_Ritchie). Feita no lendário Bell Labs, sua origem está inextricavelmente ligada ao [UNIX](https://pt.wikipedia.org/wiki/Unix). Tão simples que cabe em um livro (relativamente) curto: [The C programming language](https://www.cimat.mx/ciencia_para_jovenes/bachillerato/libros/%5BKernighan-Ritchie%5DThe_C_Programming_Language.pdf). Tão poderosa que escreveu os sistemas operacionais mais importantes que já existiram.
+
+Ela surgiu no início dos anos 70, a partir da tentativa de Ritchie de melhorar a linguagem B, que havia sido inventada para a escrita do sistema operacional Unix. Após poucos anos de desenvolvimento, em 1973, C já tinha um pré-processador e estava relativamente madura, tanto que foi utilizada para reimplementar o kernel do Unix.
+
+Uma década depois, C havia se tornado bastante popular, o que levou a ANSI a produzir documentos padronizando a especificação da linguagem. Em 1989 este padrão foi ratificado pela ANSI, recebendo o nome de C89. No ano seguinte, ele foi adotado pela ISO, recebendo o novo nome de C90 (mas que se refere à mesma especificação que o C89). Desde então, muitas outras adições foram feitas à linguagem C, sendo a versão mais recente o C23. Contudo, hoje em dia a maioria das aplicações são escritas ou com C99 ou com C17.
+
+Caso queira conhecer mais sobre o C moderno, o livro "Effective C, 2nd Ed" é um ótimo complemento, com o autor sendo um dos membros do comitê da ISO para padronização do C. Também temos o [Modern C](https://inria.hal.science/hal-02383654v2/file/modernC.pdf), disponível legalmente na íntegra no site.
 
 ## Características importantes do C
 
@@ -70,6 +77,17 @@ Os paradigmas mais populares e comuns, juntamente com suas características prin
 - **Funcional**: possuindo raízes mais acadêmicas e matemáticas (no _cálculo lambda_ e _teoria das categorias_), o paradigma funcional faz parte da família de paradigmas _declarativos_. A proposta principal deste tipo de programação é utilizar apenas _funções puras_, que são funções determinísticas e que não produzem efeitos colaterais, como mudanças de estado.
 - **Lógica**: Também faz parte dos paradigmas _declarativos_. Seu funcionamento é semelhante à lógica proposicional. A ideia é que o programador defina _fatos_ e _regras_ sobre o universo do problema, e com base nestes fatos e regras é possível fazer "perguntas" ao universo para se obter respostas automaticamente.
 
-Apesar de haver muito debate sobre qual é o melhor paradigma de programação, no fim do dia cada um tem o seu propósito... ~dito isso, o paradigma funcional é o mais irado~.
+Apesar de haver muito debate sobre qual é o melhor paradigma de programação, no fim do dia cada um tem o seu propósito... ~dito isso, o paradigma funcional é o mais irado~
 
-## Que raios é compilação?
+## Conclusão
+
+Dennis Ritchie é muitas vezes chamado de "o pai das linguagens de programação". Isto ocorre por bons motivos, pois sua criação - o C - se destaca de muitas formas:
+
+- Ele é elegante e poderoso;
+- Surgiu em um momento chave na história da computação;
+- Influenciou o design da maioria (se não todas) as linguagens que vieram depois dele;
+- Foi usado para o desenvolvimento de inúmeros softwares lendários;
+
+Apesar de velho, o C ainda é muito utilizado hoje em dia, além de ser amplamente considerada uma boa primeira linguagem de programação para se aprender. Isto nos trás ao aqui e agora... A partir de agora, nesta trilha, iremos aprender de fato a programar em C. Espero que você esteja animado para entender, pois eu sei que estou animado para ensinar!
+
+Até o próximo capítulo :)
