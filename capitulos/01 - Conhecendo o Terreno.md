@@ -17,7 +17,7 @@ C é a linguagem sucessora do B (não é meme), tendo sido criada pelos mesmos p
 
 Ela surgiu no início dos anos 70, a partir da tentativa de Ritchie de melhorar a linguagem B, que havia sido inventada para a escrita do sistema operacional Unix. Após poucos anos de desenvolvimento, em 1973, C já tinha um pré-processador e estava relativamente madura, tanto que foi utilizada para reimplementar o kernel do Unix.
 
-Uma década depois, C havia se tornado bastante popular, o que levou a ANSI a produzir documentos padronizando a especificação da linguagem. Em 1989 este padrão foi ratificado pela ANSI, recebendo o nome de C89. No ano seguinte, ele foi adotado pela ISO, recebendo o novo nome de C90 (mas que se refere à mesma especificação que o C89). Desde então, muitas outras adições foram feitas à linguagem C, sendo a versão mais recente o C23. Contudo, hoje em dia a maioria das aplicações são escritas ou com C99 ou com C17.
+Uma década depois, C havia se tornado bastante popular, o que levou a ANSI a produzir documentos padronizando a especificação da linguagem. Em 1989 este padrão foi ratificado pela ANSI, recebendo o nome de C89. No ano seguinte, ele foi adotado pela ISO, recebendo o novo nome de C90 (mas que se refere à mesma especificação que o C89). Desde então, muitas outras adições foram feitas à linguagem C, sendo a versão mais recente o C23. Contudo, hoje em dia a maioria das aplicações são escritas com C99, C11 ou C17.
 
 Caso queira conhecer mais sobre o C moderno, o livro "Effective C, 2nd Ed" é um ótimo complemento, com o autor sendo um dos membros do comitê da ISO para padronização do C. Também temos o [Modern C](https://inria.hal.science/hal-02383654v2/file/modernC.pdf), disponível legalmente na íntegra no site.
 
@@ -25,7 +25,7 @@ Caso queira conhecer mais sobre o C moderno, o livro "Effective C, 2nd Ed" é um
 
 ### Característica 1 - "Baixo" Nível
 
-Em nosso dia a dia, o termo _baixo nível_ costuma ter um caráter um tanto prejorativo. Por exemplo, um atleta que está tendo uma performânce de **baixo** nível está se saindo pior do que um adversário que está tendo uma parformânce de **alto** nível. Um jogador que está em um nível baixo em um jogo, é pior ou menos experiente do que um jogador que está em um nível alto.
+Em nosso dia a dia, o termo _baixo nível_ costuma ter um caráter um tanto pejorativo. Por exemplo, um atleta que está tendo uma performance de **baixo** nível está se saindo pior do que um adversário que está tendo uma performance de **alto** nível. Um jogador que está em um nível baixo em um jogo, é pior ou menos experiente do que um jogador que está em um nível alto.
 
 No contexto das linguagens de programação, no entanto, "baixo nível" e "alto nível" são termos que não carregam por si só um juízo de valor. Estes termos dizem respeito ao quão abstraída é a linguagem em relação ao código de máquina, ou ao quão próxima a linguagem está de interagir diretamente com o hardware de uma máquina. Tentando definir melhor os termos, podemos dizer que:
 
@@ -96,6 +96,6 @@ Dennis Ritchie é muitas vezes chamado de "o pai das linguagens de programação
 - Influenciou o design da maioria (se não todas) as linguagens que vieram depois dele;
 - Foi usado para o desenvolvimento de inúmeros softwares lendários;
 
-Apesar de velho, o C ainda é muito utilizado hoje em dia, além de ser amplamente considerada uma boa primeira linguagem de programação para se aprender. Isto nos trás ao aqui e agora... A partir de agora, nesta trilha, iremos aprender de fato a programar em C. Espero que você esteja animado para entender, pois eu sei que estou animado para ensinar!
+Apesar de velho, o C ainda é muito utilizado hoje em dia, além de ser amplamente considerada uma boa primeira linguagem de programação para se aprender. Isto nos traz ao aqui e agora... A partir de agora, nesta trilha, iremos aprender de fato a programar em C. Espero que você esteja animado para entender, pois eu sei que estou animado para ensinar!
 
 Até o próximo capítulo :)
