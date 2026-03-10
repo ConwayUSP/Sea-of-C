@@ -1,10 +1,11 @@
-```	     ..
+<tt>
+	     ..
 	  .--%%%-xm
 	%%#m.x*x%x%m.
 	x%..x	. ..
-       #. .
-       %#x .
-       -m%#-x		      .x. x.--	-	   ...x.. ..
+    #. .
+    %#x .
+    -m%#-x		      .x. x.--	-	   ...x.. ..
 	  x%#%.x.	   x..*#x#xx#x#%x-	  .#.x-mm--
 	   -x-#-%.	   -x-m...x  .-x#	  -m-x-.%m## .
 	     ...m%%*	  .# .	.*.-.-x#*	  ..   .m*%#x
@@ -37,7 +38,8 @@
 			      -#%%%-.	    -  .-..
 
 
-```
+	
+</tt>
 
 # Índice
 
@@ -99,7 +101,7 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
 
 **Temos aqui um pequeno curso de linha de comando no Linux: [Linux Journey - Command Line](https://labex.io/lesson/the-shell). Faça ele depois de instalar da forma que explicamos aqui embaixo.**
 
-####  Android
+- Android
 
     Sim, é possível compilar e rodar nossos programas em plataformas Android.
     
@@ -107,39 +109,39 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
     
     Acostume-se a baixar pacotes com ele e aí podemos seguir.
 
-####  Linux
+-  Linux
 
     Parabéns, nada precisa ser feito! Pelo menos, para instalação.
     
     Pedimos que você se acostume com um terminal (é só procurar por "terminal" no seu lançador de programas) e tenha seu editor de texto de preferência a mãos.
 
-####  Mac
+-  Mac
 
     Parabéns também! Nada há de ser feito. Isso é porque o Mac e o Linux tem um ancestral comum: o UNIX.
     
     Você também não precisa fazer mais nada, além de se acostumar com o terminal e escolher um editor de texto.
 
-####  Windows
+-  Windows
 
     Temos duas formas de fazer isso funcionar:
     
-#####  WSL2
+-  WSL2
     
-        Em versões mais modernas de Windows, em computadores fabricados depois de 2010, é possível utilizar uma máquina virtual minúscula desenvolvida pela própria Microsoft.
+    Em versões mais modernas de Windows, em computadores fabricados depois de 2010, é possível utilizar uma máquina virtual minúscula desenvolvida pela própria Microsoft.
         
-        Essa é a nossa forma predileta de rodar os programas do curso no Windows 10 e Windows 11.
+    Essa é a nossa forma predileta de rodar os programas do curso no Windows 10 e Windows 11.
         
-        Siga o tutorial oficial e escolha, se possível, uma máquina Ubuntu. Elas são as mais fáceis de utilizar.
+    Siga o tutorial oficial e escolha, se possível, uma máquina Ubuntu. Elas são as mais fáceis de utilizar.
         
-        O tutorial oficial está aqui: [Como instalar o Linux no Windows com o WSL](https://learn.microsoft.com/pt-br/windows/wsl/install).
+    O tutorial oficial está aqui: [Como instalar o Linux no Windows com o WSL](https://learn.microsoft.com/pt-br/windows/wsl/install).
         
-        Caso esteja usando o VS Code, há uma integração legal com o editor, que será reconhecida automaticamente.
+    Caso esteja usando o VS Code, há uma integração legal com o editor, que será reconhecida automaticamente.
     
-#####  MSYS2
+-  MSYS2
     
-        Caso você não consiga instalar o WSL2, seja por falta de virtualização ou versão do Windows, vamos ter que instalar esse cara aqui: [MSYS2](https://www.msys2.org/).
-        
-        No caso, execute até o fim as instruções de instalação e isso, além de te dizer que está tudo certo, já vai te dar o GCC.
+    Caso você não consiga instalar o WSL2, seja por falta de virtualização ou versão do Windows, vamos ter que instalar esse cara aqui: [MSYS2](https://www.msys2.org/).
+       
+    No caso, execute até o fim as instruções de instalação e isso, além de te dizer que está tudo certo, já vai te dar o GCC.
 
 ---
 
@@ -151,7 +153,7 @@ Independente da plataforma, precisaremos de um compilador de C. Eles são abunda
 
 Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melhor que o GCC, mas diferente. Eles, para nossos exemplos, são bem intercambiáveis, bastando trocar o `gcc` por `clang` nos comandos.
 
-####  Linux
+-  Linux
 
     Parabéns, você não precisa fazer nada! Ou, na verdade, quase nada.
     
@@ -159,23 +161,23 @@ Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melh
     
     Cada distribuição tem seu próprio gerenciador de pacotes. Acostume-se com ele, podendo ser, em geral, `apt` (para Debian, Ubuntu, Mint e amigos), `dnf` (Fedora e OpenSUSE) ou `pacman` (Arch).
 
-####  Android
+-  Android
 
     É semelhante ao Linux, então veja lá. Só no caso do Termux, você vai ter que usar o `clang` como compilador e o `pkg` como gerenciador de pacotes.
 
-####  Mac
+-  Mac
 
     Não tenho muita propriedade de causa, mas você vai ter que instalar o Brew antes. [Instale ele aqui](https://brew.sh/).
     
     Aí, siga aqui o [tutorial no Code Forces aqui](https://codeforces.com/blog/entry/101012).
 
-####  Windows
+-  Windows
 
-    #####  WSL2
+    - WSL2
     
         Use a instrução da parte de Linux, de acordo com a sua distribuição escolhida.
     
-    #####  MSYS2
+    - MSYS2
     
         Se você já fez a instalação completa, você já baixou o GCC, então está tudo em ordem.
 
@@ -456,14 +458,14 @@ A nossa memória é como uma estante, onde cada prateleira cabe um número bem l
 
 ```
  |----------+------------|
- | Endereço | Informação |	    +----------------+
+ | Endereço | Informação |          +----------------+
  |----------+------------|     	    |                |
  | 0        | X          | <--------+  	     +-------+-----+
  |----------+------------|                   |             |
- | 1        | Y          |		     |             |
- |----------+------------|		     |      CPU    |
- | ...      | ...        |		     |             |
- |----------+------------|		     |             |
+ | 1        | Y          |                   |             |
+ |----------+------------|                   |     CPU     |
+ | ...      | ...        |                   |             |
+ |----------+------------|                   |             |
  | n        | Z          |----------+        +-------+-----+
  |----------+------------|          |               /|\
                                     +----------------+
