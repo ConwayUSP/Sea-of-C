@@ -1,4 +1,4 @@
-	     ..
+```	     ..
 	  .--%%%-xm
 	%%#m.x*x%x%m.
 	x%..x	. ..
@@ -37,6 +37,7 @@
 			      -#%%%-.	    -  .-..
 
 
+```
 
 # Índice
 
@@ -65,6 +66,7 @@ Caso você nunca tenha nem mesmo mexido em um computador que não um celular ou 
 
 Espero que você se divirta!
 
+---
 
 <a id="org34a13c4"></a>
 
@@ -82,6 +84,7 @@ O importante é que ele não seja um *processador* de texto, como o Microsoft Wo
 Só precisamos garantir aqui uma certa homogeneidade com os ambientes de interface de texto, conhecidos como terminais ou consoles.
 
 
+
 <a id="org6d07fb3"></a>
 
 ### Terminais
@@ -96,7 +99,7 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
 
 **Temos aqui um pequeno curso de linha de comando no Linux: [Linux Journey - Command Line](https://labex.io/lesson/the-shell). Faça ele depois de instalar da forma que explicamos aqui embaixo.**
 
-1.  Android
+####  Android
 
     Sim, é possível compilar e rodar nossos programas em plataformas Android.
     
@@ -104,23 +107,23 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
     
     Acostume-se a baixar pacotes com ele e aí podemos seguir.
 
-2.  Linux
+####  Linux
 
     Parabéns, nada precisa ser feito! Pelo menos, para instalação.
     
     Pedimos que você se acostume com um terminal (é só procurar por "terminal" no seu lançador de programas) e tenha seu editor de texto de preferência a mãos.
 
-3.  Mac
+####  Mac
 
     Parabéns também! Nada há de ser feito. Isso é porque o Mac e o Linux tem um ancestral comum: o UNIX.
     
     Você também não precisa fazer mais nada, além de se acostumar com o terminal e escolher um editor de texto.
 
-4.  Windows
+####  Windows
 
     Temos duas formas de fazer isso funcionar:
     
-    1.  WSL2
+#####  WSL2
     
         Em versões mais modernas de Windows, em computadores fabricados depois de 2010, é possível utilizar uma máquina virtual minúscula desenvolvida pela própria Microsoft.
         
@@ -132,12 +135,13 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
         
         Caso esteja usando o VS Code, há uma integração legal com o editor, que será reconhecida automaticamente.
     
-    2.  MSYS2
+#####  MSYS2
     
         Caso você não consiga instalar o WSL2, seja por falta de virtualização ou versão do Windows, vamos ter que instalar esse cara aqui: [MSYS2](https://www.msys2.org/).
         
         No caso, execute até o fim as instruções de instalação e isso, além de te dizer que está tudo certo, já vai te dar o GCC.
 
+---
 
 <a id="orgc58d3cb"></a>
 
@@ -147,7 +151,7 @@ Independente da plataforma, precisaremos de um compilador de C. Eles são abunda
 
 Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melhor que o GCC, mas diferente. Eles, para nossos exemplos, são bem intercambiáveis, bastando trocar o `gcc` por `clang` nos comandos.
 
-1.  Linux
+####  Linux
 
     Parabéns, você não precisa fazer nada! Ou, na verdade, quase nada.
     
@@ -155,26 +159,27 @@ Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melh
     
     Cada distribuição tem seu próprio gerenciador de pacotes. Acostume-se com ele, podendo ser, em geral, `apt` (para Debian, Ubuntu, Mint e amigos), `dnf` (Fedora e OpenSUSE) ou `pacman` (Arch).
 
-2.  Android
+####  Android
 
     É semelhante ao Linux, então veja lá. Só no caso do Termux, você vai ter que usar o `clang` como compilador e o `pkg` como gerenciador de pacotes.
 
-3.  Mac
+####  Mac
 
     Não tenho muita propriedade de causa, mas você vai ter que instalar o Brew antes. [Instale ele aqui](https://brew.sh/).
     
     Aí, siga aqui o [tutorial no Code Forces aqui](https://codeforces.com/blog/entry/101012).
 
-4.  Windows
+####  Windows
 
-    1.  WSL2
+    #####  WSL2
     
         Use a instrução da parte de Linux, de acordo com a sua distribuição escolhida.
     
-    2.  MSYS2
+    #####  MSYS2
     
         Se você já fez a instalação completa, você já baixou o GCC, então está tudo em ordem.
 
+---
 
 <a id="orgb89f60c"></a>
 
@@ -222,6 +227,31 @@ Sabendo um pouco desses comandos, vamos passar aqui um exemplo interessante:
     ls -la;
     ls -la --human-readable;
 ```
+O resultado:
+```bash
+
+# ls
+#ch0.org#
+
+# ls -l
+total 12
+-rw-r--r-- 1 coscal coscal 9851 mar  5 18:33 #ch0.org#
+
+# ls -la
+total 16
+drwxr-xr-x 1 coscal coscal   36 mar  5 15:53 .
+drwx------ 1 coscal coscal  652 mar  5 17:42 ..
+-rw-r--r-- 1 coscal coscal 9851 mar  5 18:33 #ch0.org#
+lrwxrwxrwx 1 coscal coscal   34 mar  5 15:52 .#ch0.org -> coscal@mothership.16277:1772724224
+
+# ls -la --human-readable
+total 16K
+drwxr-xr-x 1 coscal coscal   36 mar  5 15:53 .
+drwx------ 1 coscal coscal  652 mar  5 17:42 ..
+-rw-r--r-- 1 coscal coscal 9,7K mar  5 18:33 #ch0.org#
+lrwxrwxrwx 1 coscal coscal   34 mar  5 15:52 .#ch0.org -> coscal@mothership.16277:1772724224
+```
+
 O primeiro resultado é o mais simples, que nos dá o resultado do comando `ls`, executado na pasta onde estou escrevendo esse capítulo.
 
 O segundo, é resultado do comando `ls -l`. O `-l` é o que chamamos de "argumento". Se `ls` é uma função do tipo f(x), o `-l` é esse x. Para esse comando, podemos passar mais de um argumento, então pense em f(x, y, z, &#x2026;).
@@ -424,56 +454,20 @@ Elas tem memória e processamento. Essa memória guarda informação, como dados
 
 A nossa memória é como uma estante, onde cada prateleira cabe um número bem limitado de livros<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Para que o nosso bibliotecário encontre as informações importantes nessa imensa biblioteca que é a memória, é necessário termos endereços para comunicar a localização das coisas.
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Endereço</th>
-<th scope="col" class="org-left">Informação</th>
-<th scope="col" class="org-left"><del>----------------</del></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">0</td>
-<td class="org-left">X</td>
-<td class="org-left">&lt;---&#x2013;&#x2014;+  	     <del>-------</del>&#x2013;&#x2014;+</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">1</td>
-<td class="org-left">Y</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">&#x2026;</td>
-<td class="org-left">&#x2026;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">n</td>
-<td class="org-left">Z</td>
-<td class="org-left">-----&#x2013;&#x2014;+        <del>-------</del>&#x2013;&#x2014;+</td>
-</tr>
-</tbody>
-</table>
-
-<del>----------------</del>
+```
+ |----------+------------|
+ | Endereço | Informação |	    +----------------+
+ |----------+------------|     	    |                |
+ | 0        | X          | <--------+  	     +-------+-----+
+ |----------+------------|                   |             |
+ | 1        | Y          |		     |             |
+ |----------+------------|		     |      CPU    |
+ | ...      | ...        |		     |             |
+ |----------+------------|		     |             |
+ | n        | Z          |----------+        +-------+-----+
+ |----------+------------|          |               /|\
+                                    +----------------+
+```
 
 A CPU (*Central Processing Unit*, o seu processador) pede informação guardada na memória para o controlador que mora na memória. As informações podem ser instruções ou dados. Se for uma instrução, o processador precisa também pedir os dados complementares à memória. Ao ter tudo em mãos, ele processa os dados segundo a instrução e devolve o resultado para a memória. Pense em você fazendo contas manualmente, como uma soma de números grandes em uma prova. Você pega os dados no enunciado, arma a conta, processa os números e escreve o resultado no campo de resposta.
 
@@ -485,55 +479,23 @@ E a CPU é simples demais para saber a diferença de dados e instruções, já q
 
 Entretanto, há uma convenção simples de como organizamos seções dos programas na memória, que chamados de segmentos:
 
-Endereço
+```
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-</table>
-
-Perto de 0 | Metdados   | <&#x2013; Ajuda o sistema operacional a colocar o programa na memória, falando o fomato dele, onde ficam certas informações dentro dele e mais.
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Instruções</th>
-<th scope="col" class="org-left">&lt;&#x2013; O programa de fato, com as operações, funções e mais.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left"><i>Heap</i></td>
-<td class="org-left">&lt;&#x2013; Parte dinâmicamente alocada. Se o programa precisar de mais memória, ele usa daqui</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left">&#x2026;</td>
-<td class="org-left">&lt;- Espaço entre o <i>stack</i> e o <i>heap</i>. Isso premite o <i>stack</i> ou o <i>heap</i> crescer, até chegar perto um do outro</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td class="org-left"><i>Stack</i></td>
-<td class="org-left">&lt;&#x2013; A pilha, onde vão ficando as chamadas de funções e seus argumentos</td>
-</tr>
-</tbody>
-</table>
-
-Perto de N | Dados      | <&#x2013; Dados constantes que você usa no seu programa, como números escritos direto nele
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-</table>
+ Endereço
+            |------------|
+ Perto de 0 | Metdados   | <-- Ajuda o sistema operacional a colocar o programa na memória, falando o fomato dele, onde ficam certas informações dentro dele e mais.
+            |------------|
+            | Instruções | <-- O programa de fato, com as operações, funções e mais.
+            |------------|
+            | /Heap/     | <-- Parte dinâmicamente alocada. Se o programa precisar de mais memória, ele usa daqui
+            |------------|
+            |    ...     | <- Espaço entre o /stack/ e o /heap/. Isso premite o /stack/ ou o /heap/ crescer, até chegar perto um do outro
+            |------------|
+            | /Stack/    | <-- A pilha, onde vão ficando as chamadas de funções e seus argumentos
+            |------------|
+ Perto de N | Dados      | <-- Dados constantes que você usa no seu programa, como números escritos direto nele
+            |------------|
+```
 
 Pense que os metadados ficam mais próximos do 0 e os dados constantes ficam mais perto de N. O *heap* é aumentado na direção dos endereços mais pertos de N, e a pilha cresce para endereços mais perto de 0. Por isso que dizemos que "a pilha cresce para baixo".
 
@@ -561,7 +523,7 @@ Se você não entendeu o papel da pilha e do *heap* ainda, tudo bem. É abstrato
 Nos próximos capítulos, vamos tratar de como a linguagem C permite falarmos com o processador e pegar a memória que precisamos, de maneira bem fácil. Acredite, mesmo que você não queira seguir com isso para o resto da sua carreira, aprenda mesmo que seja só para tirar uma boa nota nas disciplinas de IP e AEDI e AEDII, assim como OACI e OACII.
 
 
-# Footnotes
+# Notas de Rodapé
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Tecnicamente, agora temos Rust no kernel também, já há alguns anos. Acreditamos que é uma mudança positiva, mas para fins práticos, o kernel é primariamente em C. Novamente, questões históricas e o motivo disso serão explicados no próximo capítulo.
 
