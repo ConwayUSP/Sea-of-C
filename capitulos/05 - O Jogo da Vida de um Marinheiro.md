@@ -391,4 +391,7 @@ Esperamos que tenha gostado do que viu neste breve curso introdutório. O que ex
 
 Para dar um fim à este capítulo, bora assistir a vida passar:
 
-<video src="../imagens/video_final.mp4" controls="controls" style="max-width: 100%;"> </video>
+https://github.com/user-attachments/assets/85e835af-a2ab-43db-837f-695193127eaf
+
+
+
