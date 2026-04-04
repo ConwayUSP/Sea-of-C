@@ -14,6 +14,8 @@ Neste capítulo, aprenderemos sobre ferramentas importantíssimas que tornam C u
 
 ## Funções
 
+<img src="../imagens/03_funcoes.png" width=600>
+
 Funções são um construto de linguagens de programação que servem dois propósitos principais **importantíssimos**: redução de código duplicado e organização de código. É essencial que você mantenha estes propósitos em mente até que eles sejam internalizados, pois como você perceberá ao decorrer da vida, criar boas funções é o caminho para escrever programas lindos no paradigma procedural.
 
 Ok, nós sabemos o motivo de ser das funções, mas o que são elas de fato? A ideia geral é dar um nome para um **bloco de código**. Isto alcança os objetivos citados acima da seguinte forma:
@@ -235,6 +237,8 @@ Enfim, já deu de falar sobre funções, já nos prolongamos demais neste assunt
 
 ## Estruturas
 
+<img src="../imagens/03_estrutura.png" width=600>
+
 Você já se pegou pensando "NÓÓóóóssssaaaa.... a tipagem do C é muito limitante"? Pois é, foi o que pensei. Afinal de contas, o C como o vimos até agora basicamente só nos permite representar números, booleanos, caracteres e listas. E se nós quisermos representar, digamos, um BARCO?! Para fazer isso, precisaríamos de alguma forma representar seus atributos, como seu nome, sua velocidade máxima, o número de velas, e qualquer outra coisa que você queira. A forma de fazer isso é usando **structs** (estruturas). No C, você pode agregar valores em uma estrutura da seguinte forma:
 
 ``` C
@@ -287,6 +291,8 @@ Barco nosso_barco = {"Sea of C", 130.0f, 16}
 Usando `typedef` ou não, você pode passar estruturas como argumento ou valor de retorno de funções. Tente escrever um programa que faz isso para ver com seus próprios óios.
 
 ## Ponteiros
+
+<img src="../imagens/03_ponteiros.png" width=600>
 
 Chegou a hora de falar dos tão temidos ponteiros. No imaginário compartilhado da bolha de estudantes iniciantes de programação, existe a noção de que ponteiros são um conceito muito difícil de ser compreendido. Contudo, vou tentar te mostrar agora que não tem motivos para temê-los. De muitas formas, ponteiros são como ursos e tigres, eles parecem ameaçadores mas na verdade são super dóceis e você deveria tentar fazer carinho neles ao encontrá-los na natureza.
 
