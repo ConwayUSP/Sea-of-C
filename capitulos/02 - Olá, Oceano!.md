@@ -1,4 +1,3 @@
-n
 # Table of Contents
 
 1.  [Capítulo 2 - Olá, Oceano!](#org0f7efe7)
@@ -726,9 +725,6 @@ Boa sorte.
 <a id="orge450ba8"></a>
 
 # Rodapés
-
-
-# Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Isso, tecnicamente, não é uma verdade. No caso, a função `main()` só é obrigatória em programas que rodam em um sistema operacional. Dois exemplos que não precisamos de uma `main()` por não haver um SO: o *kernel* de Linux e sistemas embarcados.
 
