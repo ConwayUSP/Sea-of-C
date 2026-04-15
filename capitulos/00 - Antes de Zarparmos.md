@@ -37,14 +37,12 @@ No próximo capítulo, vamos falar um pouco mais da história da linguagem e o p
 
 Todas as plataformas modernas tem alguma forma de produzir e rodar os programas que vamos fazer. Pelo menos, nessa primeira parte.
 
-Escolha, primeiro, um editor de texto. Podem usar os que já estão incluídos no seu sistema operacional, já que eles são de pouca importância para esse curso.
+Contudo, para escrever código, você deve primeiro escolher um editor de texto. Você pode instalar um do seu agrado ou usar os que já estão incluídos no seu sistema operacional, já que esses detalhes são de pouca importância para este curso.
 
-O Visual Studio Code é bem popular. Particularmente, eu (Thiago) gosto de usar GNU Emacs. Temos colegas que usam VIM, Neovim e variantes.
+O Visual Studio Code é bem popular. Particularmente, eu (Thiago) gosto de usar GNU Emacs. Temos colegas que usam VIM, Neovim, Sublime Text, Zed, entre outros.
 O importante é que ele não seja um *processador* de texto, como o Microsoft Word, LibreOffice Writer ou Google Docs. Eles são uma péssima ideia para produzir código. Pense que, superficialmente, eles podem ser parecidos, mas são tão semelhantes quanto um ventilador e um liquidificador.
 
 Só precisamos garantir aqui uma certa homogeneidade com os ambientes de interface de texto, conhecidos como terminais ou consoles.
-
-
 
 <a id="org6d07fb3"></a>
 
@@ -54,17 +52,15 @@ Por mais que seja possível usarmos ambientes gráficos, a experiência ainda é
 
 Queremos que você conheça a forma mais simples de fazer tudo funcionar, então vamos nos manter a isso.
 
-Caso você não tenha acesso a um computador capaz de rodar Linux (ou não queira, entendemos também), vá até as salas da pró-aluno, no primeiro andar (não no térreo) do Ciclo Básico. Lá, temos computadores de uso exclusivo para nós de SI, com isso tudo já instalado nas partições de Linux. Essa é a forma mais fácil, mesmo que fisicamente distante, de fazer esse curso. Acreditamos também que ela pode ser a sua última opção, se qualquer uma dessas opções a seguir não te ajudar.
+Iremos adotar como padrão durante a trilha um ambiente [Linux](https://pt.wikipedia.org/wiki/Linux). Caso você não tenha um computador com acesso a este Sistema Operacional (SO), sugerimos que o instale ou que arranje um método de converter os comandos de Linux que usaremos para o seu SO (com a ajuda de um chat bot, por exemplo). Contudo, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou UNIX-like), ficando evidente o motivo ao longo da trilha.
 
-Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou UNIX-like), ficando evidente ao longo da trilha.
-
-**Temos aqui um pequeno curso de linha de comando no Linux: [Linux Journey - Command Line](https://labex.io/lesson/the-shell). Faça ele depois de instalar da forma que explicamos aqui embaixo.**
+**Temos aqui um pequeno curso de linha de comando no Linux: [Linux Journey - Command Line](https://labex.io/lesson/the-shell). Faça ele depois de realizar os preparativos necessários para cada SO que explicamos abaixo:**
 
 - Android
 
     Sim, é possível compilar e rodar nossos programas em plataformas Android.
     
-    Baixe o [Termux](https://termux.dev/en/), disponível na [Play Store](https://play.google.com/store/apps/details?id=com.termux&hl=pt_BR) e na [F-Droid](https://f-droid.org/pt_BR/packages/com.termux/), um editor de texto de código já deve estar instalado, como o VI. Sugerimos que você busque usar outro, mais completo um pouco, como o VIM, Neovim ou Emacs.
+    Baixe o [Termux](https://termux.dev/en/), disponível na [Play Store](https://play.google.com/store/apps/details?id=com.termux&hl=pt_BR) e na [F-Droid](https://f-droid.org/pt_BR/packages/com.termux/), um editor de texto de código já deve estar instalado, como o VI. Sugerimos que você busque usar outro um pouco mais completo, como o VIM, Neovim ou Emacs.
     
     Acostume-se a baixar pacotes com ele e aí podemos seguir.
 
@@ -72,7 +68,7 @@ Mas, lembre-se: pedimos encarecidamente que você faça esse curso em Linux (ou 
 
     Parabéns, nada precisa ser feito! Pelo menos, para instalação.
     
-    Pedimos que você se acostume com um terminal (é só procurar por "terminal" no seu lançador de programas) e tenha seu editor de texto de preferência a mãos.
+    Pedimos que você se acostume com um terminal (é só procurar por "terminal" no seu lançador de programas) e tenha seu editor de texto em mãos.
 
 -  Mac
 
@@ -128,7 +124,7 @@ Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melh
 
     Não tenho muita propriedade de causa, mas você vai ter que instalar o Brew antes. [Instale ele aqui](https://brew.sh/).
     
-    Aí, siga aqui o [tutorial no Code Forces aqui](https://codeforces.com/blog/entry/101012).
+    Depois, siga o [tutorial no Code Forces](https://codeforces.com/blog/entry/101012) de instalação do GCC.
 
 -  Windows
 
@@ -148,47 +144,55 @@ Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melh
 
 Caso não tenha visto, siga o tutorial aqui: [Linux Journey - Command Line](https://labex.io/lesson/the-shell). Depois de fazer, olhe rapidamente aqui embaixo, que temos um pouco de história e alguns conceitos importantes.
 
-Independentemente da plataforma, todos os terminais tem a mesma ideia: o sistema operacional oferece programas (chamados de "comandos" também), dos quais você digita o nome e opções, com o computador os executando e te devolvendo o resultado logo na(s) linha(s) seguinte(s).
+Independentemente da plataforma, todos os terminais tem a mesma ideia: o sistema operacional oferece programas (chamados de "comandos" também) que são rodados quando você digita o nome e opções dele. O computador então executa estes comandos e te devolve o resultado logo na(s) linha(s) seguinte(s).
 
-Um pequeno exemplo de usar o comando que me diz meu nome de usuário:
+Aqui, por exemplo, está um exemplo de como usar o comando que te diz seu nome de usuário:
+
 ```bash
     [coscal@mothership ~]$ whoami
     coscal
     [coscal@mothership ~]$ 
 ```
-Meu usuário e mais alguns dados estão entre `[]`. Especificamente, `[usuário@nome_da_minha_máquina diretório_em_que_estou]privilégio_do_usuário`. O `$` indica que não estou como um super usuário (ou administrador), mas sim um usuário regular.
-Ao fim da linha, `whoami` é o programa que me devolve meu nome de usuário. Meu usuário está logo na linha seguinte, já que é o resultado do programa. Por fim, o terminal me devolve uma linha limpa, para poder pedir mais comandos.
 
-Essa é a forma original de interação com o computador por causa de terminais de teletipo, uma máquina que transmitia texto por linhas telefônicas e de código Morse. O nome "terminal" surge da ideia de que cada ponta (ou, cada "término") do fio telefônico tinha uma máquina de teletipo (o "terminal").
+No prompt para meu comando, meu usuário e mais alguns dados estão entre `[]`. Especificamente, `[usuário@nome_da_minha_máquina diretório_em_que_estou]privilégio_do_usuário`. O `$` indica que não estou com privilégio de super usuário (ou administrador), mas sim de um usuário regular.
 
-Já que esse equipamento já existia, decidiram conectar no computador. Isso era milhares de vezes mais agradável que ter que virar as chaves individualmente ou perfurar baralhos imensos de cartões Hollerit para transmitir um programa ao computador.
+Ao fim da linha, `whoami` é o programa que me devolve meu nome de usuário. Meu usuário está logo na linha seguinte, já que é o resultado do programa. Por fim, o terminal me devolve uma linha limpa, com um prompt esperando por mais comandos.
 
-Não só isso, era possível, especialmente em universidades e empresas, distribuir esses terminais de teletipo (se eles já não estivessem espalhados por causa do seu propósito original) e conectá-los ao prédio da computação e permitir seus usuários transmitirem comandos sem terem que andar centenas de metros. Conecte em uma linha telefônica e você pode atravessar continentes para mandar seus comandos. Mas a história da Internet fica para outro dia.
+Essa é a forma original de interação com o computador por causa de **terminais de teletipo**: uma máquina que transmitia texto por linhas telefônicas e de código Morse. O nome "terminal" surge da ideia de que cada ponta (ou, cada "término") do fio telefônico tinha uma máquina de teletipo (o "terminal").
+
+Já que esse equipamento já existia, decidiram conectar no computador. Isso era milhares de vezes mais agradável do que ter que virar chaves individualmente ou perfurar baralhos imensos de cartões Hollerit para transmitir um programa a um computador.
+
+Não só isso, era possível, especialmente em universidades e empresas, distribuir esses terminais de teletipo (se eles já não estivessem espalhados por causa do seu propósito original) e conectá-los ao prédio da computação, permitindo seus usuários a transmitir comandos sem terem que andar centenas de metros. Conecte-se em uma linha telefônica e você pode atravessar continentes para mandar seus comandos. Mas a história da Internet fica para outro dia.
 
 Essa infraestrutura de comandos de texto ainda é utilíssima, tendo seu devido local. Arquivos de configuração automática, *datacenters*, acesso remoto e muito mais ainda são usos comuns de terminais.
 
 Seu sistema operacional já vem com vários comandos/programas. É comum você poder apertar TAB múltiplas vezes e receber uma lista de comandos disponíveis.
 
-Caso não tenha, vamos mostrar alguns comandos simples para mostrar suas pastas (chamados de diretórios) e a hierarquia de arquivos.
+Por aogra, vamos mostrar alguns comandos simples para navegar em suas pastas (chamadas de diretórios) e na hierarquia de arquivos.
+
 ```bash
-    ls ; # LiSt, lista os arquivos e diretórios no diretório atual
+    ls; # LiSt, lista os arquivos e diretórios no diretório atual
     pwd; # Print Working Directory, imprime o caminho completo do diretório atual
     cd <diretório>; # Change Directory, muda para o diretório
     whoami; # Who Am I, imprime seu nome de usuário na tela
 ```
+
 Duas coisas importantes do exemplo:
 
 -   Quando o computador nos devolve o resultado do programa em forma de texto, dizemos que ele "imprimiu na tela". Lembre das máquinas de teletipo e como elas eram impressoras com telefones;
 -   Os programas tendem a ser palavras, pequenas frases, siglas ou mnemônicos em inglês, para facilitar você se lembrar.
 
 Sabendo um pouco desses comandos, vamos passar aqui um exemplo interessante:
+
 ```bash
     ls;
     ls -l;
     ls -la;
     ls -la --human-readable;
 ```
+
 O resultado:
+
 ```bash
 
 # ls
@@ -224,30 +228,28 @@ Quatro coisas devem ser ditas sobre esses argumentos:
 -   Essas letras podem ser confusas agora, mas são mnêmonicas: `l` significa `list` (formatar em lista) e `a` significa `all` (tudo que há na pasta);
 -   Muitos argumentos têm também a versão por extenso. Por exemplo, `--human-readable` (legível por gente) tem o mnemônico `h`.
 
-Também é comum termos um comportamento padrão para os programas. Por exemplo, há um sistema bem complexo de dar diretórios aos programas, comuns ao terminal. Tente executar `ls .` e você verá que o resultado é igual. Isso é por que o `ls` tem como padrão o diretório atual. Você ainda pode copiar o resultado do `pwd` como argumento para o `ls` e o resultado será o mesmo. O terminal é uma interface completa de programação de respeito, então você pode até mesmo fazer `ls $(pwd)`, ao invés de colar o resultado. Programação `bash` também foge desse tutorial.
+Também é comum termos um comportamento padrão para os programas. Por exemplo, há um sistema bem complexo de dar diretórios aos programas, comuns ao terminal. Tente executar `ls .` e você verá que o resultado é igual. Isso é por que o `ls` tem como argumento padrão o diretório atual. Você ainda pode copiar o resultado do `pwd` como argumento para o `ls` e o resultado será o mesmo. O terminal é uma interface completa de programação de respeito, então você pode até mesmo fazer `ls $(pwd)`, ao invés de colar o resultado. Programação `bash` também foge desse tutorial.
 
 Explore um pouco os comandos! O terminal tende a te avisar se você está fazendo algo errado.
 
-E caso queira conhecer um pouco mais argumentos, opções, funcionalidades e mais dos programas de terminal, muitos tem manuais.
+E caso queira conhecer um pouco mais dos argumentos, opções, funcionalidades e dos programas de terminal, muitos tem manuais.
+
 ```bash
     man <programa>; # MANual, vamos usar bastante ele para algumas funções de C também
     info <programa>; # INFOrmation, informações sobre um programa
     
     [programa] --help; # Ajuda de um programa, argumento bem comum para eles
 ```
+
 Experimente um pouco esses comandos de ajuda. Eles são muito úteis.
 
 Um exercício legal é você mandar um `man man` ou `info info` e ver o que eles explicam sobre eles mesmos!
-
 
 <a id="org3c38bb5"></a>
 
 ## Álgebra Booleana Básica
 
-O sistema binário não é uma escolha feita ao acaso para representar informação em um computador. Você terá a graduação inteira para descobrir os milhares de motivos.
-
-O que nos importa agora é como ela opera na sua forma mais simples.
-
+O sistema binário não é uma escolha feita ao acaso para representar informação em um computador. O que nos importa agora é como ela opera na sua forma mais simples.
 
 <a id="org5598e57"></a>
 
@@ -257,12 +259,11 @@ Toda a álgebra Booleana possui apenas dois valores possíveis, opostos, chamado
 
 Variáveis podem ter valores fixos ou expressões. Vamos escrever variáveis como X, Y e mais para representar valores em funções e operações.
 
-
 <a id="org94689e3"></a>
 
 ### Operações Possíveis
 
-Muitas das operações são equivalentes entre si de uma forma ou outra, através de composição. As mais simples, temos três, representadas em tabelas:
+Muitas das operações são equivalentes entre si de uma forma ou outra, através de composição. As mais simples são três, representadas nas seguintes tabelas:
 
 -   NOT (NÃO / NEGAÇÃO)
 
@@ -396,14 +397,13 @@ Essas expressões tem X e Y comutativos (não importa a ordem).
 
 Essas funções podem ser compostas para resultados mais complicados: NOT(AND(1,1)) = 0.
 
-Também podemos escrever elas rapidamente de forma algébrica. A expressão acima: (1 \* 1)' = 0. Note que as aspas singulares (ou apóstrofo, tanto faz) representam a inversão da expressão dentro do parênteses. É como adicionar o "-" na álgebra normal a um número, como -(1) = -1. Ela fica escrita como 0' = 1 e 1' = 0. Para facilitar a visualização, usamos parênteses como (1)' = 0 e (0)' = 1.
+Também podemos escrever elas rapidamente de forma algébrica. A expressão acima pode ser escrita como !(1 \* 1) = 0. Note que a exclamação representam a inversão da expressão dentro do parênteses, ou seja, o operador NOT. É como adicionar o "-" na álgebra normal a um número, como -(1) = -1. Ela fica escrita como !0 = 1 e !1 = 0.
 
 O OR é equivalente à soma: (0 + 1) = 1, e o AND à multiplicação: (0 \* 1) = 0. A beleza dessa representação é que ela é bem fácil de ver, por conhecermos algebra regular. Por exemplo, me diga o resultado de (1 + 0 + &#x2026; + 0) e (0 \* 1 \* &#x2026; \* 1). Um e zero, respectivamente.
 
-Com isso, você pode construir toda a computação digital que já exisitiu e vai existir.
+Com isso, você pode construir toda a computação digital que já existiu e ainda vai existir.
 
-Vamos usar esse conhecimento para dar poder de escolha para nossos programas, realizando algo de acordo com o valor-verdade de uma expressão ou outra coisa se for o valor oposto.
-
+Vamos usar esse conhecimento para dar poder de escolha para nossos programas, realizando algo de acordo com o valor-verdade de uma expressão (condicional).
 
 <a id="org33f335a"></a>
 
@@ -411,9 +411,9 @@ Vamos usar esse conhecimento para dar poder de escolha para nossos programas, re
 
 Nome do matemático e físico húngaro John von Neumann (pronunciado "Nóimãn", e não "Núumãn"), ele concebeu um computador bem simples e que é uma forma abstrata da maioria das máquinas computacionais modernas.
 
-Elas tem memória e processamento. Essa memória guarda informação, como dados e programas, e o processador, conectado à memória, pega conjuntos de instruções (os programas) e executa o que eles pedem. Muitas vezes, eles pedem para alterar os dados na memória.
+Computadores de Von Neumann têm memória e processamento. Essa memória guarda informação, como dados e programas, e o processador, conectado à memória, pega conjuntos de instruções (os programas) e executa o que eles pedem. Muitas vezes, eles pedem para alterar os dados na memória.
 
-A nossa memória é como uma estante, onde cada prateleira cabe um número bem limitado de livros<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Para que o nosso bibliotecário encontre as informações importantes nessa imensa biblioteca que é a memória, é necessário termos endereços para comunicar a localização das coisas.
+A nossa memória é como uma estante, e em cada prateleira cabe um número bem limitado de livros<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Para que o nosso bibliotecário encontre as informações importantes nessa imensa biblioteca que é a memória, é necessário termos endereços para comunicar a localização das coisas.
 
 ```
  |----------+------------|
@@ -441,20 +441,20 @@ E a CPU é simples demais para saber a diferença de dados e instruções, já q
 Entretanto, há uma convenção simples de como organizamos seções dos programas na memória, que chamados de segmentos:
 
 ```
+ Endereço   |  Segmento
 
- Endereço
             |------------|
- Perto de 0 | Metdados   | <-- Ajuda o sistema operacional a colocar o programa na memória, falando o fomato dele, onde ficam certas informações dentro dele e mais.
+ Perto de N |    Dados   | <-- Dados constantes que você usa no seu programa, como números escritos direto nele
+            |------------|
+            |   /Stack/  | <-- A pilha, onde vão ficando as chamadas de funções e seus argumentos
+            |------------|
+            |    ...     | <-- Espaço entre o /stack/ e o /heap/. Isso permite o /stack/ ou o /heap/ crescer, até chegar perto um do outro
+            |------------|
+            |   /Heap/   | <- Parte dinamicamente alocada. Se o programa precisar de mais memória, ele usa daqui
             |------------|
             | Instruções | <-- O programa de fato, com as operações, funções e mais.
             |------------|
-            | /Heap/     | <-- Parte dinâmicamente alocada. Se o programa precisar de mais memória, ele usa daqui
-            |------------|
-            |    ...     | <- Espaço entre o /stack/ e o /heap/. Isso premite o /stack/ ou o /heap/ crescer, até chegar perto um do outro
-            |------------|
-            | /Stack/    | <-- A pilha, onde vão ficando as chamadas de funções e seus argumentos
-            |------------|
- Perto de N | Dados      | <-- Dados constantes que você usa no seu programa, como números escritos direto nele
+ Perto de 0 | Metadados  | <-- Ajuda o sistema operacional a colocar o programa na memória, falando o formato dele, onde ficam certas informações dentro dele e mais.
             |------------|
 ```
 
@@ -464,30 +464,29 @@ Com essa convenção, temos uma separação do que são instruções e dados, re
 
 Mas ainda temos um problema grave: queremos que nossos programas sejam bons a ponto de aceitar vários tipos de entrada. Por exemplo, vamos dizer que você tem um programa que o usuário usa para contar a quantidade de palavras de um texto de tamanho qualquer. Queremos que ele funcione não só para *tweets* individuais, mas também para todos os trabalhos do Machado de Assis e textos maiores.
 
-Quando o programa encara esse problema de um texto imenso, a lógica é a mesma do pequeno, mas ele precisa guardar na memória todo Machado de Assis. Para isso, medimos o tamanho dos arquivos, que é fácil (podemos pedir para o sistema operacional), e com essa informação, pedir para o sistema operacional nos dar um espaço no *heap* (nome para monte, amontoado) do tamanho dos textos e, depois que ele aumentar o tamanho do *heap*, jogamos eles ali dentro e começamos a processar.
+Quando o programa encara esse problema de um texto imenso, a lógica é a mesma do pequeno, mas ele precisa guardar na memória todo Machado de Assis. Para isso, medimos o tamanho dos arquivos, que é fácil (podemos pedir para o sistema operacional), e com essa informação, pedir para o sistema operacional nos dar um espaço no *heap* (nome para monte, amontoado) do tamanho dos textos e, depois que ele aumentar o tamanho do *heap*, jogamos o texto ali dentro e começamos a processar.
 
-Há um problema, no caso, se decidirmos só chamar uma função (isso ficará claro depois o que significa), cujo um dos argumentos são todos os textos de Machado de Assis. Já que todos os argumentos de funções são colocados na pilha (ou *stack*), pode ser grande demais e bater com o *heap*, ou pior, direto nas instruções. Se alguma dessas coisas acontecer, o sistema operacional mata o seu programa, gerando um de dois erros:
+Há um problema, no caso, se decidirmos só chamar uma função (depois explicaremos melhor o que é uma função) com um dos argumentos sendo todos os textos de Machado de Assis. Isto pois todos os argumentos de funções são colocados na pilha (ou *stack*), e esse crescimento exagerado da pilha pode causar uma colisão com o *heap*, ou pior, direto com as instruções. Se alguma dessas coisas acontecer, o sistema operacional mata o seu programa, gerando um de dois erros:
 
 -   Se a pilha cresceu demais e atingiu os outros segmentos, temos um *stack overflow*;
 -   Se o programa faz uma operação ilegal, como tentar acessar memória inválida (e vamos falar o que isso significa depois), temos uma falha de segmentação, ou *segmentation fault* (ou só *segfault*);
 
-Nós temos essa diferença porque os mecanismos de acesso à essas memórias é diferente. A pilha é facilmente acessível ao programa, podendo colocar ou tirar dados dali livremente. Mas o *heap*, ao mesmo tempo que ele é imensamente grande, se não for grande o suficiente para o que precisamos, o sistema operacional pode ter que realocar o programa para um lugar que cabe, ou, pelo menos, dizer outro lugar que o seu programa pode usar e que cabem os dados.
+Nós temos essa diferença porque os mecanismos de acesso a essas memórias é diferente. A pilha é facilmente acessível ao programa, podendo colocar ou tirar dados dali livremente. Mas o *heap*, ao mesmo tempo que é imensamente grande, se não for grande o suficiente para o que precisamos, pode forçar o SO a ter que realocar o programa para um novo lugar, ou, pelo menos, dizer outro lugar que o seu programa pode usar onde caibam os dados.
 
 Pense em um quarto de hotel. Se é para uma pessoa apenas, provavelmente um quarto com duas camas e um banheiro é mais do que o suficiente. Entretanto, se essa pessoa for apenas um agente (um tanto quanto incompetente e esquecido) de uma banda famosa que vai chegar, vai precisar de mais quartos pouco antes de seus artistas chegarem. Ainda pior, esse agente vai precisar pedir para o hotel mais quartos para os funcionários e um armazém para os instrumentos e equipamentos. Mas, enquanto não há a necessidade, ele não precisa pedir nada para a equipe do hotel.
 
 Já que essa é realmente uma parte chata da programação, muitas linguagens mais modernas automatizam esse processo para a gente. Ainda mais quando temos a chance de esquecer de pedir mais memória ou avisar o sistema operacional que terminamos de usá-la.
 
-O C nunca foi e nunca será uma delas. Mas não tema, isso tem suas vantagens: se você tem controle da memória, você pode otimizar o seu programa de uma maneira impossível em qualquer outra linguagem. Não só isso, mas também é possível programas muito pequenos, importante para sistemas embarcados e sistemas operacionais.
+O C nunca foi e nunca será uma delas. Mas não tema, isso tem suas vantagens: se você tem controle da memória, você pode otimizar o seu programa de uma maneira impossível em qualquer outra linguagem. Não só isso, mas também é possível programas muito pequenos; fato importante para sistemas embarcados e sistemas operacionais.
 
 Se você não entendeu o papel da pilha e do *heap* ainda, tudo bem. É abstrato mesmo. Siga com a trilha e, inevitavelmente, *stack overflows* e *segfaults* acontecerão. Não se assuste! Só a prática vai te ajudar a realmente entender melhor os mecanismos da memória do computador.
 
-Nos próximos capítulos, vamos tratar de como a linguagem C permite falarmos com o processador e pegar a memória que precisamos, de maneira bem fácil. Acredite, mesmo que você não queira seguir com isso para o resto da sua carreira, aprenda mesmo que seja só para tirar uma boa nota nas disciplinas de IP e AEDI e AEDII, assim como OACI e OACII.
-
+Nos próximos capítulos, vamos tratar de como a linguagem C permite falarmos com o processador e pegar a memória que precisamos, de maneira bem fácil. Acredite, mesmo que você não queira seguir com isso para o resto da sua carreira, aprenda mesmo que seja só para tirar uma boa nota em alguma prova.
 
 # Notas de Rodapé
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Tecnicamente, agora temos Rust no kernel também, já há alguns anos. Acreditamos que é uma mudança positiva, mas para fins práticos, o kernel é primariamente em C. Novamente, questões históricas e o motivo disso serão explicados no próximo capítulo.
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> Não importa muito quanto, mas tende a ser um múltiplo do que chamamos de "tamanho natural" do processador, como 32-bit ou 64-bit. A analogia começa a quebrar muito rápido se você ficar pensando demais na equivalência "bytes, bits, inteiros, floats e tamanho natural" com "livros". O importante é que as nem as prateleiras e nem as estantes são infinitamente grandes, por mais que o Google Chrome ache que são.
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> Não importa muito quanto, mas tende a ser um múltiplo do que chamamos de "tamanho natural" do processador, como 32-bit ou 64-bit. A analogia começa a quebrar muito rápido se você ficar pensando demais na equivalência "bytes, bits, inteiros, floats e tamanho natural" com "livros". O importante é que nem as prateleiras e nem as estantes são infinitamente grandes, por mais que o Google Chrome ache que são.
 
 <sup><a id="fn.3" href="#fnr.3">3</a></sup> Há um debate sobre as arquiteturas de Harvard, um modelo também abstrato de computação que separa explicitamente nossos programas em memória de dados e de instruções. No nosso caso, ela não é super relevante, a menos que você esteja usando um microcontrolador ou um processador MIPS.
