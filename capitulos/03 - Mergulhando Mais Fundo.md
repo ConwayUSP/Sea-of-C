@@ -102,7 +102,7 @@ Vamos pensar em uma nova situação. Digamos que você está escrevendo um progr
 
 E também suponhamos que cada uma dessas coisas se consiste em uma lista de muitos passos. Se nós não dividirmos nosso código em funções, ou seja, colocarmos todas as instruções individuais diretamente no `main`, isto faria com que ele ficasse extremamente poluído. Dessa forma, quando quiséssemos alterar algum procedimento, teríamos que ficar procurando uma linha específica em meio a um `main` enorme. O que gostariamos de fazer é **abstrair** os detalhes de cada procedimento, e apenas colocar no main as instruções mais gerais. Para fazer isso, colocamos o bloco de código com os detalhes de como calcular a direção do vento em uma função chamada `calcula_velocidade_do_vento` (nomear coisas is my passion), e o mesmo vale para as demais tarefas. No fim, nosso `main` ficará limpinho assim:
 
-```
+``` C
 main() {
     calcula_velocidade_do_vento()
     avalia_calmaria()
