@@ -42,13 +42,13 @@ Contudo, para escrever código, você deve primeiro escolher um editor de texto.
 O Visual Studio Code é bem popular. Particularmente, eu (Thiago) gosto de usar GNU Emacs. Temos colegas que usam VIM, Neovim, Sublime Text, Zed, entre outros.
 O importante é que ele não seja um *processador* de texto, como o Microsoft Word, LibreOffice Writer ou Google Docs. Eles são uma péssima ideia para produzir código. Pense que, superficialmente, eles podem ser parecidos, mas são tão semelhantes quanto um ventilador e um liquidificador.
 
-Só precisamos garantir aqui uma certa homogeneidade com os ambientes de interface de texto, conhecidos como terminais ou consoles.
+Só precisamos garantir aqui uma certa homogeneidade com os ambientes de interface de texto (Text User Interface, TUI), conhecidos como terminais ou consoles.
 
 <a id="org6d07fb3"></a>
 
 ### Terminais
 
-Por mais que seja possível usarmos ambientes gráficos, a experiência ainda é aquém daquela que o terminal nos permite. E mesmo se formos usar um GUI (Graphical User Interface, ou Interface de Usuário Gráfica), no fundo, ela está passando comandos de texto para nossos compiladores.
+Por mais que seja possível usarmos ambientes gráficos (com janelas, botões e mais), a experiência ainda é aquém daquela que o terminal nos permite. E mesmo se formos usar um GUI (Graphical User Interface, ou Interface de Usuário Gráfica), no fundo, ela está passando comandos de texto para nossos compiladores.
 
 Queremos que você conheça a forma mais simples de fazer tudo funcionar, então vamos nos manter a isso.
 
@@ -80,23 +80,23 @@ Iremos adotar como padrão durante a trilha um ambiente [Linux](https://pt.wikip
 
     Temos duas formas de fazer isso funcionar:
     
--  WSL2
+    -  WSL2
     
-    Em versões mais modernas de Windows, em computadores fabricados depois de 2010, é possível utilizar uma máquina virtual minúscula desenvolvida pela própria Microsoft.
+        Em versões mais modernas de Windows, em computadores fabricados depois de 2010, é possível utilizar uma máquina virtual minúscula desenvolvida pela própria Microsoft.
         
-    Essa é a nossa forma predileta de rodar os programas do curso no Windows 10 e Windows 11.
+        Essa é a nossa forma predileta de rodar os programas do curso no Windows 10 e Windows 11.
         
-    Siga o tutorial oficial e escolha, se possível, uma máquina Ubuntu. Elas são as mais fáceis de utilizar.
+        Siga o tutorial oficial e escolha, se possível, uma máquina Ubuntu. Elas são as mais fáceis de utilizar.
         
-    O tutorial oficial está aqui: [Como instalar o Linux no Windows com o WSL](https://learn.microsoft.com/pt-br/windows/wsl/install).
+        O tutorial oficial está aqui: [Como instalar o Linux no Windows com o WSL](https://learn.microsoft.com/pt-br/windows/wsl/install).
         
-    Caso esteja usando o VS Code, há uma integração legal com o editor, que será reconhecida automaticamente.
+        Caso esteja usando o VS Code, há uma integração legal com o editor, que será reconhecida automaticamente.
     
--  MSYS2
+    -  MSYS2
     
-    Caso você não consiga instalar o WSL2, seja por falta de virtualização ou versão do Windows, vamos ter que instalar esse cara aqui: [MSYS2](https://www.msys2.org/).
+        Caso você não consiga instalar o WSL2, seja por falta de virtualização ou versão do Windows, vamos ter que instalar esse cara aqui: [MSYS2](https://www.msys2.org/).
        
-    No caso, execute até o fim as instruções de instalação e isso, além de te dizer que está tudo certo, já vai te dar o GCC.
+        No caso, execute até o fim as instruções de instalação e isso, além de te dizer que está tudo certo, já vai te dar o GCC, mais abaixo.
 
 ---
 
@@ -122,7 +122,7 @@ Só o pessoal do Android que vai ter que usar o CLang. Ele não é pior nem melh
 
 -  Mac
 
-    Não tenho muita propriedade de causa, mas você vai ter que instalar o Brew antes. [Instale ele aqui](https://brew.sh/).
+    Não tenho muita propriedade de causa, mas você vai ter que instalar o Brew antes. [Instale-o aqui](https://brew.sh/).
     
     Depois, siga o [tutorial no Code Forces](https://codeforces.com/blog/entry/101012) de instalação do GCC.
 
@@ -154,11 +154,11 @@ Aqui, por exemplo, está um exemplo de como usar o comando que te diz seu nome d
     [coscal@mothership ~]$ 
 ```
 
-No prompt para meu comando, meu usuário e mais alguns dados estão entre `[]`. Especificamente, `[usuário@nome_da_minha_máquina diretório_em_que_estou]privilégio_do_usuário`. O `$` indica que não estou com privilégio de super usuário (ou administrador), mas sim de um usuário regular.
+No prompt para meu comando, meu usuário e mais alguns dados estão entre `[]`. Especificamente, `[usuário@nome_da_minha_máquina diretório_em_que_estou]privilégio_do_usuário`. O `$` indica que não estou com privilégio de super usuário (ou administrador, que pode fazer qualquer coisa com o sistema operacional), mas sim de um usuário regular (que não tem tantos direitos assim, por exemplo, instalar alguns tipos de programas).
 
 Ao fim da linha, `whoami` é o programa que me devolve meu nome de usuário. Meu usuário está logo na linha seguinte, já que é o resultado do programa. Por fim, o terminal me devolve uma linha limpa, com um prompt esperando por mais comandos.
 
-Essa é a forma original de interação com o computador por causa de **terminais de teletipo**: uma máquina que transmitia texto por linhas telefônicas e de código Morse. O nome "terminal" surge da ideia de que cada ponta (ou, cada "término") do fio telefônico tinha uma máquina de teletipo (o "terminal").
+Essa é a forma original de interação com o computador por causa de **terminais de teletipo**: uma máquina que transmitia texto por linhas telefônicas e de código Morse até uma impressora de papel, qeu recebia a mensagem escrita do outro lado da linha. O nome "terminal" surge da ideia de que cada ponta (ou, cada "término") do fio telefônico tinha uma máquina de teletipo (o "terminal").
 
 Já que esse equipamento já existia, decidiram conectar no computador. Isso era milhares de vezes mais agradável do que ter que virar chaves individualmente ou perfurar baralhos imensos de cartões Hollerit para transmitir um programa a um computador.
 
@@ -168,7 +168,7 @@ Essa infraestrutura de comandos de texto ainda é utilíssima, tendo seu devido 
 
 Seu sistema operacional já vem com vários comandos/programas. É comum você poder apertar TAB múltiplas vezes e receber uma lista de comandos disponíveis.
 
-Por aogra, vamos mostrar alguns comandos simples para navegar em suas pastas (chamadas de diretórios) e na hierarquia de arquivos.
+Por agora, vamos mostrar alguns comandos simples para navegar em suas pastas (chamadas de diretórios, por questões históricas) e na hierarquia de arquivos.
 
 ```bash
     ls; # LiSt, lista os arquivos e diretórios no diretório atual
@@ -228,7 +228,7 @@ Quatro coisas devem ser ditas sobre esses argumentos:
 -   Essas letras podem ser confusas agora, mas são mnêmonicas: `l` significa `list` (formatar em lista) e `a` significa `all` (tudo que há na pasta);
 -   Muitos argumentos têm também a versão por extenso. Por exemplo, `--human-readable` (legível por gente) tem o mnemônico `h`.
 
-Também é comum termos um comportamento padrão para os programas. Por exemplo, há um sistema bem complexo de dar diretórios aos programas, comuns ao terminal. Tente executar `ls .` e você verá que o resultado é igual. Isso é por que o `ls` tem como argumento padrão o diretório atual. Você ainda pode copiar o resultado do `pwd` como argumento para o `ls` e o resultado será o mesmo. O terminal é uma interface completa de programação de respeito, então você pode até mesmo fazer `ls $(pwd)`, ao invés de colar o resultado. Programação `bash` também foge desse tutorial.
+Também é comum termos um comportamento padrão para os programas. Por exemplo, há um sistema bem complexo de dar diretórios aos programas, comuns ao terminal. Tente executar `ls .` e você verá que o resultado é igual. Isso é por que o `ls` tem como argumento padrão o diretório atual. Você ainda pode copiar o resultado do `pwd` como argumento para o `ls` e o resultado será o mesmo. O terminal é uma interface completa de programação, podendo ser usada para tarefas muito complexas, então você pode até mesmo fazer `ls $(pwd)`, ao invés de colar o resultado. Programação `bash` também foge desse tutorial, mas entenda que `bash` é uma linguagem de programação (e um programa) que interpreta comandos de terminal no Linux.
 
 Explore um pouco os comandos! O terminal tende a te avisar se você está fazendo algo errado.
 
