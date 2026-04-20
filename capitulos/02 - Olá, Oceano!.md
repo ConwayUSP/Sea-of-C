@@ -1,4 +1,4 @@
-# Table of Contents
+# Índice
 
 1.  [Capítulo 2 - Olá, Oceano!](#org0f7efe7)
 2.  [Olá, Mundo!](#org1f90453)
@@ -272,7 +272,7 @@ E para usarmos, fazemos o seguinte:
 enum Direcoes angulo = SUDESTE;
 ```
 
-Agora, o valor dentro de `angulo` é `135`. Mas é meio feio ter que usar ele sempre desse jeito, então temos uam forma de criar tipos em C: os `typedefs`. Vamos ver isso mais a fundo no próximo capítulo, já que ganhamos mais flexibilidade lá, mas as declarações são sempre assim:
+Agora, o valor dentro de `angulo` é `135`. Mas é meio feio ter que usar ele sempre desse jeito, então temos uma forma de criar tipos em C: os `typedefs`. Vamos ver isso mais a fundo no próximo capítulo, já que ganhamos mais flexibilidade lá, mas as declarações são sempre assim:
 
 ``` C
 // Convertendo o nosso exemplo anterior:
@@ -293,7 +293,7 @@ Direcoes angulo = SUDESTE;
 
 É meio estranho no começo, mas você, basicamente, diz para o compilador `typedef` ("vou te ensinar um tipo") `tipo` ("que tem esse tipo") `{...}` ("e tem essa cara aqui") e `nome` ("e se chama `nome`").
 
-Por mais que seja meio estranho, ainda é melhor que dar valores mágicos para as coisas, e também é mais fácil de lembrar. Especialmente com um próximo contructo.
+Por mais que seja meio estranho, ainda é melhor que dar valores mágicos para as coisas, e também é mais fácil de lembrar. Especialmente com um próximo constructo.
 
 <a id="orgfd4c8b1"></a>
 
@@ -337,7 +337,7 @@ No caso, a comparação booleana em C é `==`. O porquê disso é pelo `=` já s
 Também é comum você encurtar a expressão da seguinte forma:
 
 ``` C
-if(ancora_abaixada) levantar_ancora(); // Equivalente ao nosso exemplo ale de cima
+if(ancora_abaixada) levantar_ancora(); // Equivalente ao nosso exemplo ali de cima
 ```
 
 E, caso você queira aportar o seu navio, temos a seguinte possibilidade:
@@ -545,7 +545,7 @@ Viu só como fica mais organizadinho? Inclusive, temos o `else` ali, mascarado c
 
 Veja duas coisas importantes:
 
--   O valor para cada caso é, obrigatoriamente, discreto. Ou seja, coisas como 'A' ou "123123" valem, mas "Frase grande", funcao<sub>com</sub><sub>retorno</sub>() ou "3.14" não;
+-   O valor para cada caso é, obrigatoriamente, discreto. Ou seja, coisas como 'A' ou "123123" valem, mas "Frase grande", "funcao_com_retorno()" ou "3.14" não;
 -   Temos esses `breaks` entre cada caso para fazer ele se comportar que nem uma escada de `else if`. Se você quiser que seja que nem uma escada de `if`, pode omitir o `break`.
 
 Um exemplo comum:
@@ -590,7 +590,7 @@ int capacidade;
 capacidade = (navio_de_carga) ? numero_conteiners : numero_passageiros 
 ```
 
-Ou seja, se o navio for de carga, a capacidade dele é cotada em contêneires, e se for de passageiros, é pelo número de passageiros.
+Ou seja, se o navio for de carga, a capacidade dele é cotada em contêineres, e se for de passageiros, é pelo número de passageiros.
 
 <a id="org480c35f"></a>
 
@@ -767,4 +767,4 @@ Boa sorte.
 
 <sup><a id="fn.5" href="#fnr.5">5</a></sup> Tem também certas otimizações de casos de falha rápida, mas não vamos falar disso agora, já que é um tipo de otimização que vale ser feita só se você realmente precisa de cada ciclo. Também, esse curso é só introdutório, então não vamos nem mesmo conseguir te dar as ferramentas de análise necessárias para você fazer essa análise.
 
-<sup><a id="fn.6" href="#fnr.6">6</a></sup> A única forma ideal para tratar erros é se a linguagem tivesse a própria forma de tratar erros, como exceções e mais. Mas até mesmo linguagens como Python tendem a fazer um rocambole com `try` / `catch` complicados e cumpridos. Acredtie, você vai usar até pouco o `goto`, e quando precisar, vai ser bem claro e fácil.
+<sup><a id="fn.6" href="#fnr.6">6</a></sup> A única forma ideal para tratar erros é se a linguagem tivesse a própria forma de tratar erros, como exceções e mais. Mas até mesmo linguagens como Python tendem a fazer um rocambole com `try` / `catch` complicados e compridos. Acredtie, você vai usar até pouco o `goto`, e quando precisar, vai ser bem claro e fácil.
