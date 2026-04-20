@@ -321,7 +321,7 @@ Isso é, em partes, por motivos históricos, e outra parte por motivos de pratic
 
 Um programa de planilhas como o Lotus 1-2-3, o avô do Microsoft Excel, é meio indiferente se o processador é lento ou rápido. Porém, programas que dependem de tempo são muito mais sensíveis. Pense em um jogo onde você tem que apertar um botão que abre uma porta, que se fecha lentamente, e você tem que correr para atravessar ela e sair da sala. Se você está em um i386, o avô de todos os Intels, a 16MHz, tudo bem. Contra um AMD Ryzen qualquer coisa que chega até 5GHz, pouco mais de 300 vezes mais rápido, esse desafio fica complicado se a porta se fechar com essa diferença de velocidade.
 
-Então, é ideal que separemos a velocidade do nosso *hardware* da velocidade do nosso jogo. Até mesmo porque não conseguimos prever que tipo de máquino nosso usuário estará usando.
+Então, é ideal que separemos a velocidade do nosso *hardware* da velocidade do nosso jogo. Até mesmo porque não conseguimos prever que tipo de máquina nosso usuário estará usando.
 
 Para manter essa experiência consistente, o `SetTargetFPS()` é essencial. Ele nos garante que não ultrapassaremos essa velocidade limite. Para o exemplo, ela é 60 FPS (ou Hz).
 
