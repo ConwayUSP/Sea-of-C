@@ -114,7 +114,7 @@ Neste comando, fizemos duas coisas:
 
 Se tudo correu bem, você pode executar o e você verá uma coisinha assim:
 
-![img](raylib-hello.png)
+![img](../imagens/04_raylib_hello.png)
 
 Tudo dando certo, podemos começar a explorar a biblioteca!
 
