@@ -306,7 +306,7 @@ Em ordem, os tipos compostos são:
 -    Coletâneas de dados de tipos diferentes;
 -    Coletâneas de dados que se sobrepõe de alguma forma;
 
-Na aula seguinte, vamos falar do segundo tipo mais a fundo. Se você quer saber um pouco mais sobre esse último tipo, bem menos comum, pode ver essa nota de rodapé aqui<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>.
+Na aula seguinte, vamos falar do segundo tipo mais a fundo. Se você quer saber um pouco mais sobre esse último tipo, bem menos comum, pode ver essa nota de rodapé aqui.<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>
 
 <a id="arrays"></a>
 ### Arrays
@@ -332,8 +332,8 @@ Acessamos os valores da seguinte forma:
 
 ```C
 float primeiro_preco = precos[0]; // Perceba que começamos a contar do 0, e não do 1
-float segundo_preco  = preco[1];
-float terceiro_preco = preco[2];
+float segundo_preco  = precos[1];
+float terceiro_preco = precos[2];
 ```
 
 E podemos usar-lo da seguinte forma:
