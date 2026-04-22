@@ -4,13 +4,15 @@
 2.  [Olá, Mundo!](#org1f90453)
 3.  [Variáveis](#orgf21606d)
     1.  [Declaração](#orgb0203b6)
-    2.  [Tipos](#org9570bda)
+    2.  [Tipos Simples](#org9570bda)
         1.  [Char](#org61562e9)
         2.  [Ints](#orgd9b3440)
         3.  [Floats](#org43ffad5)
         4.  [Qualificadores](#org7c51a87)
         5.  [Bools](#org728e322)
         6.  [Enums](#org9802952)
+    3.  [Tipos Compostos](#tipos-compostos)
+        1.  [Arrays](#arrays)    
 4.  [Condicionais](#orgfd4c8b1)
     1.  [If](#org28f6314)
     2.  [Else](#org3decb62)
@@ -106,7 +108,7 @@ Por fim, para o compilador separar o tamanho correto na estante para caber nossa
 
 <a id="org9570bda"></a>
 
-## Tipos
+## Tipos Simples
 
 Para fins didáticos, os tipos são relativamente poucos. Caso você faça muita questão, mas muita mesmo, leia os anexos D e E do [rascunho da especificação ISO para Linguagem C](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf), a Seção 6.7 também. Ótimo se você quiser perder tempo, entender um *bug* extremamente obscuro ou tiver problemas para dormir.
 
@@ -294,6 +296,54 @@ Direcoes angulo = SUDESTE;
 É meio estranho no começo, mas você, basicamente, diz para o compilador `typedef` ("vou te ensinar um tipo") `tipo` ("que tem esse tipo") `{...}` ("e tem essa cara aqui") e `nome` ("e se chama `nome`").
 
 Por mais que seja meio estranho, ainda é melhor que dar valores mágicos para as coisas, e também é mais fácil de lembrar. Especialmente com um próximo constructo.
+
+<a id="tipos-compostos"></a>
+## Tipos Compostos
+
+Na linguagem C, temos três tipos compostos: _arrays_, _structs_ e _unions_. Nessa aula, vamos só tratar do primeiro tipo, que é o mais simples dos três.
+Em ordem, os tipos compostos são:
+-    Coletâneas de dados de um mesmo tipo;
+-    Coletâneas de dados de tipos diferentes;
+-    Coletâneas de dados que se sobrepõe de alguma forma;
+
+Na aula seguinte, vamos falar do segundo tipo mais a fundo. Se você quer saber um pouco mais sobre esse último tipo, bem menos comum, pode ver essa nota de rodapé aqui<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>.
+
+<a id="arrays"></a>
+### Arrays
+
+A linguagem C tem formas de representar dados contínuos, como, por exemplo, uma lista de números reais:
+```C
+float precos[3] = {5.0, 10.0, 20.0};
+```
+
+Perceba que devemos dizer para o compilador o tamanho da nossa _array_. Nesse caso específico, não é necessário dar o valor, já que já inicializamos com três valores entre chaves e, então, o compilador é espertinho e preenche para nós a lacuna. Então o seguinte código é válido:
+```C
+float precos[] = {5.0, 10.0, 20.0};
+```
+
+A declaração de tamanho é importante para casos como:
+```C
+float valores[50]; // O compilador nos separa a memória, mas preenchemos ela só no futuro.
+```
+
+Lembre-se que o C faz termos bastante cuidado / controle com a memória.
+
+Acessamos os valores da seguinte forma:
+
+```C
+float primeiro_preco = precos[0]; // Perceba que começamos a contar do 0, e não do 1
+float segundo_preco  = preco[1];
+float terceiro_preco = preco[2];
+```
+
+E podemos usar-lo da seguinte forma:
+```C
+precos[2] = precos[0] + precos[1];
+```
+
+ Ou seja, ele vai somar os valores em `precos[0]` e `precos[1]`, guardando o resultado em `precos[2]`, sobrescrevendo o resultado do terceiro item.
+
+ Mais abaixo, ao longo dessa mesma aula, vamos atravessar essa _array_, que é uma operação bem comum (e a principal fonte dos seus primeiros _bugs_ de memória!).
 
 <a id="orgfd4c8b1"></a>
 
@@ -690,6 +740,29 @@ Os loops `for` possuem dentro de seus parênteses três partes, separadas por `;
 
 Sendo assim, toda a vez que o nosso laço terminar de realizar todas as operações, ele aumenta em um o `i` e verifica a sentença ali do meio. Enquanto não é falsa a expressão, o laço é executado na íntegra.
 
+Dando continuidade ao nosso _array_ mais acima, temos o seguinte caso:
+```C
+float soma_precos = 0.0;
+for(int i = 0; i < (sizeof(precos) / sizeof(precos[0])); i++){
+    soma_precos += precos[i];
+}
+```
+Esse código soma todos os itens da _array_ `precos`, colocando o resultado em `soma_precos`.
+A construção para calcular até onde o nosso _loop_ vai é aquela `sizeof(precos) / sizeof(precos[0])`. Pode ser meio confuso, mas vou te explicar dois comportamentos importantes que estão sendo usados:
+
+1. Quando você usa a função `sizeof()`, ela te retorna o tamanho, em _bytes_, que o argumento ocupa na memória;
+2. O nome da _array_ tem dois comportamentos, meio estranhos no começo, mas importantes e práticos ao longo da sua carreira:
+    1. Se usada no `sizeof()`, ele te dá o tamanho da _array_ **toda** na memória;
+    2. Ela é equivalente ao ponteiro para o primeiro item (e você vai descobrir o que são ponteiros na próxima aula, mas `*precos == precos[0]` é verdadeiro)
+
+Então, o que temos ali do resultado da conta é o tamanho da _array_ em número de itens, já que pegar o tamanho todo dela em _bytes_ e dividir pelo tamanho em _bytes_ do primeiro item nos dá o tamanho dela.
+
+Pense que estamos vendo o tamanho de uma viagem em quilômetros, mas precisamos saber em milhas náuticas para ter uma ideia do tempo de viagem e uso do combustível. Então, dividimos a quilometragem total por quantos quilômetros temos em milhas náuticas e teremos a distância em, bem, milhas náuticas.
+
+Você não precisa memorizar essas operações agora, mas você vai ver código das outras pessoas fazendo coisas estranhas e vai lembrar desse parágrafo.
+
+Caso queira, também pode tentar converter esse _loop_ em seu equivalente para o `while`. É bem interessante!
+
 <a id="org1e9983e"></a>
 
 ## Exercício de Fixação
@@ -768,3 +841,6 @@ Boa sorte.
 <sup><a id="fn.5" href="#fnr.5">5</a></sup> Tem também certas otimizações de casos de falha rápida, mas não vamos falar disso agora, já que é um tipo de otimização que vale ser feita só se você realmente precisa de cada ciclo. Também, esse curso é só introdutório, então não vamos nem mesmo conseguir te dar as ferramentas de análise necessárias para você fazer essa análise.
 
 <sup><a id="fn.6" href="#fnr.6">6</a></sup> A única forma ideal para tratar erros é se a linguagem tivesse a própria forma de tratar erros, como exceções e mais. Mas até mesmo linguagens como Python tendem a fazer um rocambole com `try` / `catch` complicados e compridos. Acredtie, você vai usar até pouco o `goto`, e quando precisar, vai ser bem claro e fácil.
+
+<sup><a id="fn.7" href="#fnr.7">7</a></sup> O tipo `union` é bem próprio do C, com poucas linguagens implementando coisas semelhantes. Ele é uma forma de poupar memória, mas para coisas correlatas.
+Um uso comum é quando vamos programar com _sockets_ de rede, já que um endereço IPv4 tem 32 _bits_ e o IPv6 tem 128 _bits_, muitas implementações juntam os dois em um `union`, mas o motivo exato das facilidades que isso traz, ao invés de usar qualquer outro tipo composto, são muitas para essa singela nota de rodapé. Aqui, um link para o autor de um dos livros citados: [socket programming and C99](https://gustedt.wordpress.com/2011/10/24/socket-programming-and-c99/)
