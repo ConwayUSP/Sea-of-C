@@ -12,7 +12,8 @@
         5.  [Bools](#org728e322)
         6.  [Enums](#org9802952)
     3.  [Tipos Compostos](#tipos-compostos)
-        1.  [Arrays](#arrays)    
+        1.  [Arrays](#arrays)
+        2.  [Arrays de Arrays](#arrays-arrays)
 4.  [Condicionais](#orgfd4c8b1)
     1.  [If](#org28f6314)
     2.  [Else](#org3decb62)
@@ -344,6 +345,35 @@ precos[2] = precos[0] + precos[1];
  Ou seja, ele vai somar os valores em `precos[0]` e `precos[1]`, guardando o resultado em `precos[2]`, sobrescrevendo o resultado do terceiro item.
 
  Mais abaixo, ao longo dessa mesma aula, vamos atravessar essa _array_, que é uma operação bem comum (e a principal fonte dos seus primeiros _bugs_ de memória!).
+
+<a id="arrays-arrays"></a>
+
+### Arrays de Arrays
+
+Podemos escrever _arrays_ de _arrays_. Pense que é uma forma de guardar tipos compostos de tipos compostos. São tipos compostos até o embaixo...
+
+Declaramos ela das duas formas que já fizemos com vetores:
+```C
+int array_de_arrays[][] = {
+                                {1, 0, 0},
+                                {0, 1, 0},
+                                {0, 0, 1}
+                            }
+// Ou sem inicialização:
+
+int array_sem_inicializar[3][3];
+```
+
+Ela é uma forma um tanto quanto compacta de tratar de dados, como imagens, pontos em um mundo 3D, quatérnios para movimentação, vetores normais para pontos em uma superfície, grafos e muito mais.
+
+Para nós, vamos, ter que saber deles para nosso tabuleiro do Jogo da Vida!
+
+Acessamos também da forma que você imagina, mesmo que confuso:
+```C
+int item_2_2 = array_de_arrays[1][1]; // Leia como "Do 1-ésimo vetor, vamos pegar o 1-ésimo item", já que é feito em ordem
+```
+
+Um pequeno exercício: qual é o item `[2][2]` da nossa matriz de exemplo?
 
 <a id="orgfd4c8b1"></a>
 
@@ -762,6 +792,9 @@ Pense que estamos vendo o tamanho de uma viagem em quilômetros, mas precisamos 
 Você não precisa memorizar essas operações agora, mas você vai ver código das outras pessoas fazendo coisas estranhas e vai lembrar desse parágrafo.
 
 Caso queira, também pode tentar converter esse _loop_ em seu equivalente para o `while`. É bem interessante!
+
+Em um extra, se quiser tentar causar o seu primeiro _bug_ de memória (se você já não o fez), crie, inicialize e imprima na tela uma matriz 3x3. O _loop_ é a construção ideal para isso.
+Não só, e se você tentar fazer uma matriz de mais de duas dimensões, como `matriz[3][3][3]` e percorrê-la? E de N dimensões? Tenta! É legal!
 
 <a id="org1e9983e"></a>
 
