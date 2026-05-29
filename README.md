@@ -27,3 +27,8 @@ Se você encontrar algum erro (gramatical, de digitação ou conceitual), não h
 ## Pré-requisitos
 
 Para a sua sorte, o único pré-requisito deste "curso" é que você saiba ler em português, o que é praticamente garantido se você está lendo isso. Portanto, não perca mais tempo e vá ler! O Mar te chama!!!
+
+## Trabalho Final
+Leiam esse documento, que é o seu trabalho final!
+
+https://docs.google.com/document/d/1fq-XvvxVNzXCRsWmR_SC-SFV28WHUkvBnAMkz_A7oH4/edit?tab=t.0#heading=h.2abb0ffgxe76
